@@ -38,7 +38,8 @@ fn color_to_index(color : Colors) -> Int {
   }
 }
 
-pub fn color(str : String, color : Colors) -> String {
+pub fn color(self:Chalk, color : Colors) -> Chalk {
   let idx = color_to_index(color)
-  "\u001B[\(idx)m\(str)\u001B[39m"
+  let str=self.to_string()
+  Chalk("\u001B[\(idx)m\(str)\u001B[39m")
 }

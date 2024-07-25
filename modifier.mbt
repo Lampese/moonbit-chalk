@@ -24,7 +24,8 @@ fn modifier_to_index(modifier : Modifier) -> (Int, Int) {
   }
 }
 
-pub fn modifier(modifier : Modifier, str : String) -> String {
+pub fn modifier(self : Chalk, modifier : Modifier) -> Chalk {
   let (start_idx, end_idx) = modifier_to_index(modifier)
-  "\u001B[\(start_idx)m\(str)\u001B[\(end_idx)m"
+  let str = self.to_string()
+  Chalk("\u001B[\(start_idx)m\(str)\u001B[\(end_idx)m")
 }
