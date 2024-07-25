@@ -7,4 +7,7 @@ pub fn to_string(self : Chalk) -> String {
     Chalk(str) => str
   }
 }
-  
+
+pub fn output(self : Chalk, logger : Logger) -> Unit {
+  logger.write_string(self.to_string())
+}
