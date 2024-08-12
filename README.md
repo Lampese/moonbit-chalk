@@ -4,16 +4,12 @@ MoonBit-Chalk provides some APIs for terminal color rendering, including renderi
 
 ### Usage
 
-Use Chalk to construct a Chalk object and attach properties to it through chain calls.
+Use chalk() to construct a Chalk object and attach properties to it through chain calls.
 
 Chalk provides three types of enum internally for setting properties: text color(Color enum), background color(BackGroundColors enum), and format(Modifier enum).
 
-```moonbit
-let str = Chalk("Hello World!").color(Red).background(BgBlue).modifier(Underline)
-```
-
-Chalk has implemented Show Trait so you can use it as string directly.
+Chalk is an immutable variable, which allows you to easily reuse and combine it, and finally use Render to render any value that conforms to the Show Trait.
 
 ```moonbit
-println(Chalk("Hello World!").color(Red))
+let str = chalk().background(BgRed).modifier(Bold).color(Red).render("hello")
 ```

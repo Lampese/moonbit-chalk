@@ -37,9 +37,3 @@ fn backgroud_color_to_index(color : BackGroundColors) -> Int {
     BgWhiteBright => 107
   }
 }
-
-pub fn background(self : Chalk, color : BackGroundColors) -> Chalk {
-  let idx = backgroud_color_to_index(color)
-  let str = self.to_string()
-  Chalk("\u001B[\(idx)m\(str)\u001B[49m")
-}

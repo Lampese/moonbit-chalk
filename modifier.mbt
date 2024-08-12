@@ -1,6 +1,6 @@
 pub enum Modifier {
   Reset
-  Blod
+  Bold
   Dim
   Italic
   Underline
@@ -13,7 +13,7 @@ pub enum Modifier {
 fn modifier_to_index(modifier : Modifier) -> (Int, Int) {
   match modifier {
     Reset => (0, 0)
-    Blod => (1, 22)
+    Bold => (1, 22)
     Dim => (2, 22)
     Italic => (3, 23)
     Underline => (4, 24)
@@ -22,10 +22,4 @@ fn modifier_to_index(modifier : Modifier) -> (Int, Int) {
     Hidden => (8, 28)
     Strikethrough => (9, 29)
   }
-}
-
-pub fn modifier(self : Chalk, modifier : Modifier) -> Chalk {
-  let (start_idx, end_idx) = modifier_to_index(modifier)
-  let str = self.to_string()
-  Chalk("\u001B[\(start_idx)m\(str)\u001B[\(end_idx)m")
 }
