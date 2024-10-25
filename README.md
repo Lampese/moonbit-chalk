@@ -4,7 +4,7 @@ MoonBit-Chalk provides some APIs for terminal color rendering, including renderi
 
 ### Usage
 
-Use chalk() to construct a Chalk object and attach properties to it through chain calls.
+Use `chalk()` to construct a Chalk object and attach properties to it through chain calls.
 
 Chalk provides three types of enum internally for setting properties: text color(Color enum), background color(BackGroundColors enum), and format(Modifier enum).
 
