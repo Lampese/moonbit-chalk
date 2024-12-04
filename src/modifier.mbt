@@ -1,4 +1,5 @@
-pub enum Modifier {
+///|
+pub(all) enum Modifier {
   Reset
   Bold
   Dim
@@ -10,6 +11,7 @@ pub enum Modifier {
   Strikethrough
 }
 
+///|
 fn modifier_to_index(modifier : Modifier) -> (Int, Int) {
   match modifier {
     Reset => (0, 0)

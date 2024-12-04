@@ -1,24 +1,30 @@
-pub enum Chalk {
+///|
+pub(all) enum Chalk {
   Cons(Chalk, Render)
   Nil
 }
 
+///|
 pub fn chalk() -> Chalk {
   Nil
 }
 
+///|
 pub fn background(self : Chalk, color : BackGroundColors) -> Chalk {
   Cons(self, RenderBackGround(color))
 }
 
+///|
 pub fn modifier(self : Chalk, modifier : Modifier) -> Chalk {
   Cons(self, RenderModifier(modifier))
 }
 
+///|
 pub fn color(self : Chalk, color : Colors) -> Chalk {
   Cons(self, RenderColor(color))
 }
 
+///|
 pub fn render[T : Show](self : Chalk, to_render : T) -> String {
   match self {
     Cons(chalk, now_render) =>

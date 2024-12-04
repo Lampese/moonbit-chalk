@@ -1,4 +1,5 @@
-pub enum BackGroundColors {
+///|
+pub(all) enum BackGroundColors {
   BgBlack
   BgRed
   BgGreen
@@ -17,6 +18,7 @@ pub enum BackGroundColors {
   BgWhiteBright
 }
 
+///|
 fn backgroud_color_to_index(color : BackGroundColors) -> Int {
   match color {
     BgBlack => 40

@@ -1,4 +1,5 @@
-pub enum Colors {
+///|
+pub(all) enum Colors {
   Black
   Red
   Green
@@ -17,6 +18,7 @@ pub enum Colors {
   WhiteBright
 }
 
+///|
 fn color_to_index(color : Colors) -> Int {
   match color {
     Black => 30

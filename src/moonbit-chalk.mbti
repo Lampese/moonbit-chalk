@@ -1,0 +1,77 @@
+package Lampese/moonbit-chalk
+
+// Values
+fn chalk() -> Chalk
+
+// Types and methods
+pub(all) enum BackGroundColors {
+  BgBlack
+  BgRed
+  BgGreen
+  BgYellow
+  BgBlue
+  BgMagenta
+  BgCyan
+  BgWhite
+  BgBlackBright
+  BgRedBright
+  BgGreenBright
+  BgYellowBright
+  BgBlueBright
+  BgMagentaBright
+  BgCyanBright
+  BgWhiteBright
+}
+
+pub(all) enum Chalk {
+  Cons(Chalk, Render)
+  Nil
+}
+impl Chalk {
+  background(Self, BackGroundColors) -> Self
+  color(Self, Colors) -> Self
+  modifier(Self, Modifier) -> Self
+  render[T : Show](Self, T) -> String
+}
+
+pub(all) enum Colors {
+  Black
+  Red
+  Green
+  Yellow
+  Blue
+  Magenta
+  Cyan
+  White
+  BlackBright
+  RedBright
+  GreenBright
+  YellowBright
+  BlueBright
+  MagentaBright
+  CyanBright
+  WhiteBright
+}
+
+pub(all) enum Modifier {
+  Reset
+  Bold
+  Dim
+  Italic
+  Underline
+  Overline
+  Inverse
+  Hidden
+  Strikethrough
+}
+
+pub(all) enum Render {
+  RenderBackGround(BackGroundColors)
+  RenderColor(Colors)
+  RenderModifier(Modifier)
+}
+
+// Type aliases
+
+// Traits
+
