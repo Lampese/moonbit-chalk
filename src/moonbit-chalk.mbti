@@ -1,7 +1,10 @@
-package Lampese/moonbit-chalk
+// Generated using `moon info`, DON'T EDIT IT
+package "Lampese/moonbit-chalk"
 
 // Values
 fn chalk() -> Chalk
+
+// Errors
 
 // Types and methods
 pub(all) enum BackGroundColors {
@@ -27,12 +30,10 @@ pub(all) enum Chalk {
   Cons(Chalk, Render)
   Nil
 }
-impl Chalk {
-  background(Self, BackGroundColors) -> Self
-  color(Self, Colors) -> Self
-  modifier(Self, Modifier) -> Self
-  render[T : Show](Self, T) -> String
-}
+fn Chalk::background(Self, BackGroundColors) -> Self
+fn Chalk::color(Self, Colors) -> Self
+fn Chalk::modifier(Self, Modifier) -> Self
+fn[T : Show] Chalk::render(Self, T) -> String
 
 pub(all) enum Colors {
   Black
