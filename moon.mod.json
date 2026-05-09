@@ -6,6 +6,4 @@
   "license": "MIT",
   "keywords": ["string", "chalk", "color"],
   "description": "Terminal string styling support for MoonBit.",
-  "source": "src"
 }
-    
